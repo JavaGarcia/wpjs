@@ -26,7 +26,6 @@ console.log(inMsj)
   if(inMsj=='[offline]:'){
     emitter.emit('control','offline... try to connect...')
     cmd.stdin.write('/L\n'); //Connect
-    cmd.stdin.write('\n'); //Connect fix
   }
   //after login 1 time!
   if(inMsj=='Auth: Logged in!'){
@@ -64,7 +63,6 @@ function connect(opts, cb) {
         });
         emitter.on('online',function(o){
             emitter.emit('control',o)
-            //send({type:'txt',to:'573003487735',data:'prueba'})
             return cb(o) 
         });
         
