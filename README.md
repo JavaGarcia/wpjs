@@ -21,11 +21,11 @@ wpjs.send({to: '57300349xxx', type: 'txt', data: 'Im busy...'});
 ```
 #### inbox text message
 ```javascript
-wpjs.on('inbox',function(in){
-  console.log(in.type)//type of message (txt)
-  console.log(in.from)// number_src of message
-  console.log(in.date)// arrival date
-  console.log(in.data)// message...
+wpjs.on('inbox',function(message){
+  console.log(message.type)//type of message (txt)
+  console.log(message.from)// number_src of message
+  console.log(message.date)// arrival date
+  console.log(message.data)// message...
 }); 
 ```
 ### Made with :heart: in Colombia.
