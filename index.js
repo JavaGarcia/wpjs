@@ -21,11 +21,11 @@ function send(obj){
 }
 
 emitter.on('process',function(inMsj) {
-console.log(inMsj)
   // if it's disconnected
-  if(inMsj=='[offline]:'){
+  if(inMsj.indexOf('[offline]:')>=0){
     emitter.emit('control','offline... try to connect...')
     cmd.stdin.write('/L\n'); //Connect
+    cmd.stdin.write('/L\n'); //RE-Connect
   }
   //after login 1 time!
   if(inMsj=='Auth: Logged in!'){
@@ -68,8 +68,8 @@ function connect(opts, cb) {
         
 
     }else{
-        emitter.emit('Error: not found number||password arguments')
-        return cb('Error: not found number||password arguments')
+        emitter.emit('Error: number||password arguments')
+        return cb('Error: number||password arguments')
     }
     
 }
