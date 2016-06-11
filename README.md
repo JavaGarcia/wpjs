@@ -28,5 +28,19 @@ wpjs.on('inbox',function(message){
   console.log(message.data)// message...
 }); 
 ```
+
+#### Echo example
+```javascript
+var wpjs = require('./index.js');
+
+wpjs.connect({number: '57300349xxx', password: '=XXXXX'}, function (state) {
+  console.log(state)
+});
+
+wpjs.on('inbox',function(message){
+  wpjs.send({to: message.from, type: 'txt', data: message.data}); 
+}); 
+```
+
 ### Made with :heart: in Colombia.
 
