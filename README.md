@@ -1,9 +1,6 @@
 # wpjs
-A wrapper of yowsup (WhatsApp with Nodejs)
+A wrapper of yowsup with Nodejs (WhatsApp with Nodejs)
 
-This wrapper is a simple test of yowsup with Nodejs
-
-I hope someday fix some bugs and add new features.
 
 ## Usage
  You need to have yowsup installed, 
@@ -12,7 +9,7 @@ I hope someday fix some bugs and add new features.
 ```javascript
 var wpjs = require('./index.js');
 
-wpjs.connect({number: '57300349xxx', password: '=XXXXX'}, function(state){
+wpjs.connect({number: '57300349xxx', password: '=XXXXX', yowsup:"PATH_YOWSUP_INSTALLED"}, function(state){
  console.log(state)
 }); 
 ```
@@ -26,6 +23,7 @@ wpjs.send({to: '57300349xxx', type: 'txt', data: 'Im busy...'});
 wpjs.on('inbox',function(message){
   console.log(message.type)//type of message (txt)
   console.log(message.from)// number_src of message
+  console.log(message.username) // nickname 
   console.log(message.date)// arrival date
   console.log(message.data)// message...
 }); 
@@ -40,7 +38,8 @@ wpjs.connect({number: '57300349xxx', password: '=XXXXX'}, function(state){
 });
 
 wpjs.on('inbox',function(message){
-  wpjs.send({to: message.from, type: 'txt', data: message.data}); 
+ console.log('[INBOX] User:'+message.username+' from:'+message.from+' data: '+message.data);
+ wpjs.send({to: message.from, type: 'txt', data: message.data}); 
 }); 
 ```
 
