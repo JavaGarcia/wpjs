@@ -33,8 +33,8 @@ wpjs.on('inbox',function(message){
 ```javascript
 var wpjs = require('./index.js');
 
-wpjs.connect({number: '57300349xxx', password: '=XXXXX'}, function(state){
-  console.log(state)
+wpjs.connect({number: '57300349xxx', password: '=XXXXX', yowsup:"PATH_YOWSUP_INSTALLED"}, function(state){
+ console.log(state)
 });
 
 wpjs.on('inbox',function(message){
