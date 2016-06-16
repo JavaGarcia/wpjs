@@ -1,5 +1,10 @@
-# wpjs
-A wrapper of yowsup with Nodejs (WhatsApp with Nodejs)
+# WPJS (Whatsapp nodejs)
+
+WPJS is a client of whatsapp in nodejs
+
+###Features
+* Sender messages type text
+* Receiver messags type text
 
 
 ## Usage
