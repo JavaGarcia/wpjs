@@ -11,6 +11,7 @@ WPJS is a client of whatsapp in nodejs
  You need to have yowsup installed, 
 ```sh
 pip install yowsup2
+git  clone https://github.com/JavaGarcia/wpjs.git
 ```
  
  
