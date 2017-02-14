@@ -19,7 +19,7 @@ git  clone https://github.com/JavaGarcia/wpjs.git
 ```javascript
 var wpjs = require('./index.js');
 
-wpjs.connect({number: '57300349xxx', password: '=XXXXX', yowsup:"PATH_YOWSUP_INSTALLED"}, function(state){
+wpjs.connect({number: '57300349xxx', password: '=XXXXX', yowsup:"PATH_YOWSUP-CLI_INSTALLED"}, function(state){
  console.log(state)
 }); 
 ```
